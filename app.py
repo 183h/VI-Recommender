@@ -27,10 +27,10 @@ if __name__ == '__main__':
 
     prep_data(df_activities, df_deals, df_items, s_functions[argv[1]], int(argv[2]))
 
-    users = load(open('users_itembased.p', 'rb'))
-    items = load(open('items_itembased.p', 'rb'))
-    similarities = load(open('similarities_itembased.p', 'rb'))
-    stats = load(open('stats_itembased.p', 'rb'))
+    users = load(open('users_itembased1.p', 'rb'))
+    items = load(open('items_itembased1.p', 'rb'))
+    similarities = load(open('similarities_itembased1.p', 'rb'))
+    stats = load(open('stats_itembased1.p', 'rb'))
     users_train = df_activities['user_id'].unique()
 
     recommended = {}
@@ -44,7 +44,7 @@ if __name__ == '__main__':
     e1 = default_timer()
     # print "Recommendation for all users exec time", (e1 - s1) / 60, "min"
 
-    dump(recommended, open("recommended_itembased.p", "wb"))
+    dump(recommended, open("recommended_itembased1.p", "wb"))
 
     # what users bought
     purchases = {}
